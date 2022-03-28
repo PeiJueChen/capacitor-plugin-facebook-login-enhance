@@ -361,8 +361,6 @@ logEvent(options: { eventName: string; parameters: any; }) => Promise<void>
 
 Make all properties in T optional
 
-<code>{
- [P in keyof T]?: T[P];
- }</code>
+<code>{ [P in keyof T]?: T[P]; }</code>
 
 </docgen-api>
