@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.static_framework = true
   s.dependency 'FBSDKCoreKit', '~> 12.0.0'
-  s.dependency 'FBSDKLoginKit', '~> 12.0.0
+  s.dependency 'FBSDKLoginKit', '~> 12.0.0'
 end
