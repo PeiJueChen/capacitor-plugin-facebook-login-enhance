@@ -118,19 +118,17 @@ public class FacebookLoginEnhancePlugin: CAPPlugin {
         }
 
 //        AppEvents.Name.addedToCart
-        if let p = call.get("parameters", [String : Any].self) {
-            var parms = [AppEvents.ParameterName : Any]()
+        if let p = call.getObject("parameters") {
+            var parms = [String : Any]()
             for (key, value) in p {
-                // print("\(key): \(value)")
-                parms[AppEvents.ParameterName(key)] = value
+                parms[key] = value
             }
             AppEvents.logEvent(AppEvents.Name(rawValue: eventName), parameters: parms)
-//            AppEvents.logEvent(AppEvents.Name(rawValue: eventName), parameters: p)
         }else {
             AppEvents.logEvent(AppEvents.Name(rawValue: eventName))
         }
 
-        call.success()
+        call.resolve()
 
     }
 }
